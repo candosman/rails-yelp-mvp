@@ -1,0 +1,33 @@
+<p style="color: green"><%= notice %></p>
+<div class=banner>
+  <h1>Restaurants</h1>
+  <p>Choose wisely🤩</p>
+</div>
+
+  <button type="button" class="btn btn-link"><%= link_to 'Create new Restaurant', new_restaurant_path %></button>
+
+
+
+  <table class="table">
+
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Address</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Category</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @restaurants.each do |restaurant| %>
+          <tr>
+            <td><%= restaurant.name %></td>
+            <td><%= restaurant.address %></td>
+            <td><%= restaurant.phone_number %></td>
+            <td><%= restaurant.category %></td>
+            <td><%= link_to 'Show', restaurant %></td>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
